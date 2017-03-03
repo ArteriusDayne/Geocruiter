@@ -1,0 +1,38 @@
+/* YOUR CUSTOM STYLES */
+        
+        html,
+        body,
+        header,
+        .view {
+            height: 100%;
+        }
+        /* Navigation*/
+        
+        .navbar {
+            background-color: transparent;
+        }
+        
+        .top-nav-collapse {
+            background-color: #455A64; 
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                background-color: #0A6A60;
+            }
+        }
+        
+        .full-bg-img {
+            color: #fff;
+        }
+        
+        .view {
+            background: url("https://mdbootstrap.com/images/regular/people/img%20(63).jpg")no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        footer.page-footer {
+            background-color: #7E929C;
+        }
