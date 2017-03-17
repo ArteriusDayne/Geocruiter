@@ -1,11 +1,9 @@
-/* YOUR CUSTOM STYLES */
-        
         html,
         body,
         header,
         .view {
             height: 100%;
-        }
+        } 
         /* Navigation*/
         
         .navbar {
@@ -13,26 +11,45 @@
         }
         
         .top-nav-collapse {
-            background-color: #455A64; 
+            background-color: #006296;
         }
         
         @media only screen and (max-width: 768px) {
             .navbar {
-                background-color: #0A6A60;
+                background-color: #006296;
             }
         }
-        
-        .full-bg-img {
-            color: #fff;
-        }
+        /*Intro*/
         
         .view {
-            background: url("https://farm1.staticflickr.com/289/19198779034_88c11eafc5_h.jpg")no-repeat center center fixed;
+            background: url("https://mdbootstrap.com/images/regular/people/img%20(54).jpg")no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
         }
+        
+        @media (max-width: 768px) {
+            .full-bg-img,
+            .view {
+                height: 100%;
+                position: relative;
+            }
+        }
+        
+        .description {
+            padding-top: 25%;
+            padding-bottom: 3rem;
+            color: #fff
+        }
+        
+        @media (max-width: 992px) {
+            .description {
+                padding-top: 7rem;
+                text-align: center;
+            }
+        }
+
         footer.page-footer {
             background-color: #7E929C;
         }
