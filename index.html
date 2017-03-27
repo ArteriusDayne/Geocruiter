@@ -30,7 +30,7 @@
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="index.html">
                         <img src="img/geocruiter.png" class="d-inline-block align-top" alt="GEOcruiter">
                     </a>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -71,7 +71,7 @@
                                     <hr class="hr-light wow fadeInLeft">
                                     <p class="wow fadeInLeft" data-wow-delay="0.4s">We'll be a running a Beta of our free interactive resume builder.  Be the first to know! The GEOcruiter app allows job seeker to enter the job market in the retail and service space and create a detailed, interactive profile. Aptitude assessment criteria captures and highlights a candidate’s skills and strengths, as well as their ability to work. Completed profiles are then entered into a database pool to be searched by hiring managers.</p>
                                     <br>
-                                    <a class="btn btn-git btn-lg wow fadeInLeft" data-wow-delay="0.7s" href="resume.html">Build your Resume</a>
+                                    <a class="btn btn-git btn-lg wow fadeInLeft" data-wow-delay="0.7s" href="resume_start.html">Build your Resume</a>
                                 </div>
                             </div>
                             <!--/.First column-->
@@ -92,7 +92,7 @@
                                             <div class="md-form">
                                                 <i class="fa fa-user prefix"></i>
                                                 <input type="text" id="form3" class="form-control" name="Name">
-                                                <label for="form3">Your name</label>
+                                                <label for="form1">Your name</label>
                                             </div>
                                             <div class="md-form">
                                                 <i class="fa fa-envelope prefix"></i>
@@ -104,7 +104,7 @@
                                             <div class="md-form">
                                                 <i class="fa fa-pencil prefix"></i>
                                                 <textarea type="text" id="form8" class="md-textarea" name="Message"></textarea>
-                                                <label for="form8">Your message (optional)</label>
+                                                <label for="form3">Your message (optional)</label>
                                             </div>
 
                                             <div class="text-center">
@@ -141,7 +141,6 @@
 
                     <!--First row-->
                     <div class="row">
-
                         <!--First column-->
                         <div class="col-md-6 mb-r wow fadeInDown">
                             <!--Image-->
@@ -324,13 +323,13 @@
                     <div class="modal-body">
                         <div class="md-form">
                             <i class="fa fa-envelope prefix"></i>
-                            <input type="text" id="form2" class="form-control">
+                            <input type="text" id="form4" class="form-control">
                             <label for="form2">Your email</label>
                         </div>
 
                         <div class="md-form">
                             <i class="fa fa-lock prefix"></i>
-                            <input type="password" id="form3" class="form-control">
+                            <input type="password" id="form5" class="form-control">
                             <label for="form3">Your password</label>
                         </div>
                         <div class="text-center">
@@ -365,19 +364,19 @@
                     <div class="modal-body">
                         <div class="md-form">
                             <i class="fa fa-envelope prefix"></i>
-                            <input type="text" id="form2" class="form-control">
+                            <input type="text" id="form6" class="form-control">
                             <label for="form2">Your email</label>
                         </div>
 
                         <div class="md-form">
                             <i class="fa fa-lock prefix"></i>
-                            <input type="password" id="form3" class="form-control">
+                            <input type="password" id="form7" class="form-control">
                             <label for="form3">Your password</label>
                         </div>
 
                         <div class="md-form">
                             <i class="fa fa-lock prefix"></i>
-                            <input type="password" id="form4" class="form-control">
+                            <input type="password" id="form8" class="form-control">
                             <label for="form4">Repeat password</label>
                         </div>
 
@@ -452,39 +451,6 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="js/mdb.min.js"></script>
-
-        <!--Google Maps-->
-        <script src="http://maps.google.com/maps/api/js"></script>
-        <script>
-            function init_map() {
-
-                var var_location = new google.maps.LatLng(40.725118, -73.997699);
-
-                var var_mapoptions = {
-                    center: var_location,
-                    zoom: 14
-                };
-
-                var var_marker = new google.maps.Marker({
-                    position: var_location,
-                    map: var_map,
-                    title: "New York"
-                });
-
-                var var_map = new google.maps.Map(document.getElementById("map-container"),
-                        var_mapoptions);
-
-                var_marker.setMap(var_map);
-
-            }
-
-            google.maps.event.addDomListener(window, 'load', init_map);
-        </script>
-
-        <script>
-            new WOW().init();
-        </script>
-
 
     </body>
 
