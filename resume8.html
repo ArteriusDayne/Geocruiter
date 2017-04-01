@@ -14,6 +14,7 @@
         <!-- Material Design Bootstrap -->
         <link href="css/mdb.min.css" rel="stylesheet">
         <!-- Custom styles -->
+		
 
     </head>
 
@@ -63,53 +64,17 @@
 
                 <section>
                     <div class="reply-form">
-                        <h1 class="section-heading">Record Your First Video! (NEED TO EDIT)</h1>
+                        <h1 class="section-heading">Who Are You?</h1>
                     </div>
-                    <div class="md-form">
-                        <i class="fa fa-address-book prefix"></i>
+                    <div style = "text-align:center;">
+	<h2>Question 1</h2>
+	<p>Answer as Truthfully as you can!</p>
+	<div class="md-form">
+                        
                         <input type="text" id="form22" class="form-control">
-                        <label for="form22">Address</label>
+                        <label for="form22">Record your answer here</label>
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="md-form">
-                                <i class="fa fa-building prefix"></i>
-                                <input type="email" id="form32" class="form-control validate">
-                                <label for="form32">City</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="md-form">
-                                <i class="fa fa-map prefix"></i>
-                                <input type="password" id="form33" class="form-control validate">
-                                <label for="form33">State</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md-form">
-                        <i class="fa fa-star prefix"></i>
-                        <input type="password" id="form18" class="form-control validate">
-                        <label for="form18">Zip Code</label>
-                    </div>
-                    <br>
-                    <div class="md-form">
-                        <i class="fa fa-phone prefix"></i>
-                        <input type="password" id="form18" class="form-control validate">
-                        <label for="form18">Phone Number</label>
-                    </div>
-                    <br>
-                    <div class="md-form">
-                        <i class="fa  fa-shield prefix"></i>
-                        <input type="password" id="form18" class="form-control validate">
-                        <label for="form18">Social Security</label>
-                    </div>
-                    <br>
-                    <div class="md-form">
-                        <i class="fa fa-pied-piper prefix"></i>
-                        <input type="password" id="form18" class="form-control validate">
-                        <label for="form18">Position</label>
-                    </div>
+					</div>
                     <div class="text-center">
                         <a href="resume9.html" class="btn btn-primary">Continue</a>
                     </div>
@@ -169,4 +134,72 @@
         <script type="text/javascript" src="js/mdb.min.js"></script>
 
     </body>
+	
+<script type="text/javascript">
+	if(getBrowser() == "Chrome"){
+ var constraints = {"audio": false, "video": { "mandatory": { "minWidth": 320, "maxWidth": 320, "minHeight": 240,"maxHeight": 240 }, "optional": [] } };
+}else if(getBrowser() == "Firefox"){
+ var constraints = {audio: true,video: { width: { min: 320, ideal: 320, max: 1280 }, height: { min: 240, ideal: 240, max: 720 }}}; 
+} 
+function onBtnRecordClicked (){
+   if (typeof MediaRecorder === 'undefined' || !navigator.getUserMedia) {
+      alert('Sorry! This demo requires Firefox 30 and up or Chrome 47 and up.');
+    }else {
+      navigator.getUserMedia(constraints, startRecording, errorCallback);
+    }
+}
+function startRecording(stream) {
+ log('Starting...');
+ mediaRecorder = new MediaRecorder(stream);
+  
+ mediaRecorder.start();
+  
+ var url = window.URL || window.webkitURL;
+ videoElement.src = url ? url.createObjectURL(stream) : stream;
+ videoElement.play();
+  
+ mediaRecorder.ondataavailable = function(e) {
+     //log('Data available...');
+     //console.log(e.data);
+     //console.log(e);
+  
+     chunks.push(e.data);
+     };
+ 
+     mediaRecorder.onerror = function(e){
+         log('Error: ' + e);
+         console.log('Error: ', e);
+     };
+ 
+ 
+     mediaRecorder.onstart = function(){
+         log('Started, state = ' + mediaRecorder.state);
+     };
+ 
+     mediaRecorder.onstop = function(){
+         log('Stopped, state = ' + mediaRecorder.state);
+  
+         var blob = new Blob(chunks, {type: "video/webm"});
+         chunks = [];
+  
+         var videoURL = window.URL.createObjectURL(blob);
+  
+         downloadLink.href = videoURL;
+         videoElement.src = videoURL;
+         downloadLink.innerHTML = 'Download video file';
+  
+         var rand = Math.floor((Math.random() * 10000000));
+         var name = "video_"+rand+".webm" ;
+  
+         downloadLink.setAttribute( "download", name);
+         downloadLink.setAttribute( "name", name);
+  
+     };
+ 
+     mediaRecorder.onwarning = function(e){
+         log('Warning: ' + e);
+     };
+}
+
+  </script>
 </html>
